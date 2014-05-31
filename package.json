@@ -1,0 +1,14 @@
+{
+  "name": "lego-brick-scrapper",
+  "version": "0.0.1",
+  "description": "Lego Brick Scrapper.",
+  "main": "server.js",
+  "author": "d1b1",
+  "dependencies": {
+    "express": "latest",
+    "request": "latest",
+    "cheerio": "latest",
+    "async": "^0.9.0",
+    "underscore": "^1.6.0"
+  }
+}
