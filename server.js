@@ -24,6 +24,9 @@ app.get('/go', function(req, res){
 				json.familyColor = $('#Label4').text();
 
 				blocks.push(json);
+
+				request.post('http://api.legojs.io/brick').form(json);
+
 				callback();
 			} else {
 				console.log('err', error);
@@ -65,7 +68,7 @@ app.get('/go', function(req, res){
 						var price = $(th_text.get(2)).text().trim();
 	          var img   = $(a.find('img')).attr('src') + '';
 
-	          var json = { id: id, name: name, price: price, img: img };
+	          var json = { id: id, name: name, price: price, image: img };
 
             stats.total++;
 
