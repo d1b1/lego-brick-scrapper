@@ -17,8 +17,9 @@ app.get('/go', function(req, res){
 		request(url, function(error, response, html){
 			if(!error){
 				var $ = cheerio.load(html);
-				json.elementID = $('#Label6').text();
-				json.designID = $('#Label7').text();
+
+				json.elementId = $('#Label6').text() || 'NA';
+				json.designId = $('#Label7').text();
 				json.category = $('#Label5').text();
 				json.exactColor = $('#Label8').text();
 				json.familyColor = $('#Label4').text();
@@ -36,6 +37,7 @@ app.get('/go', function(req, res){
 	}, 20);
 
 	q.drain = function() {
+		console.log('All Done');
 		res.json({
 			stats: stats,
 			blocks: blocks
