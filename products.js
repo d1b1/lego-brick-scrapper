@@ -25,7 +25,8 @@ var q = async.queue(function (page, callback) {
       var json = {
         productId: el.ProductId,
         name:      el.ProductName,
-        image:     el.ImageLocation
+        image:     el.ImageLocation,
+        pdf_Url:   el.PdfLocation
       };
       totalCounter++;
       n.push(json, function (err) {});
